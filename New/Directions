@@ -1,0 +1,12 @@
+(turn on camera)
+sudo raspi-config 
+
+(get virtual interface)
+source ~/. profile
+workon cv
+
+opencv_createsamples -vec positive.vec -img positive_images/img1.jpg -bg bg -num 100 -maxxangle 1.1 -maxyangle 1.1 -maxzangle 0.9 -w 24 -h 24
+
+opencv_createsamples -vec vectorFile.vec -img image.jpg -bg bg.txt -num 10 -pngoutput
+
+opencv_traincascade -data /home/pi/Desktop/personal_opencv/New -vec positive.vec -bg bg -numPos 10 -numNeg 5 -w 24 -h 24 -mem 2048

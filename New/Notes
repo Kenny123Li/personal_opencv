@@ -1,0 +1,30 @@
+try 1 is pretty much first time, classifier puts a ton of boxes on all kinds of stuff, not accurate
+at all
+-----------------------------------------
+try 2 is a big improvement, but sometimes put boxes around stuff that's not the pass.
+usually hits when the pass is in the camera, but the box is not necessarily on the box
+used around 20 neg, ? pos
+-----------------------------------------
+try 3 is using 300 pos images, 24 by 24, and 40 negative images. Training this vector file was really weird,
+every 2-3 stages it said abortedent samples, and give #positive samples-1, i would just put like one less
+and train the cascade, but it would break like every stage. This one was between try 1 and try 2,
+-----------------------------------------
+try 4 
+[200 pos images, 40 negative images]
+[nothing broke, went smoothly, used usual code]
+[actually 2nd best i'd say. Still had a lot of boxes, but it was noticeably more dense around a hall
+pass compared to any other object in the camera]
+-----------------------------------------
+try [5] 
+[number of pos images:  number of neg images: ] 
+[description of training]
+[how the classifier did]
+-----------------------------------------
+
+
+
+try [number] 
+[number of pos images:  number of neg images: ] 
+[description of training]
+[how the classifier did]
+-----------------------------------------

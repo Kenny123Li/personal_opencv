@@ -22,8 +22,6 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port 
         cv2.rectangle(img, (x,y), (x+w, y+h), (255,0,0), 2)
         roi_gray = gray[y:y+h, x:x+w]
         roi_color = img[y:y+h, x:x+w]
-        for (ex, ey, ew, eh) in eyes:
-            cv2.rectangle(roi_color, (ex,ey), (ex+ew, ey+eh), (0,255,0), 2)
 
     cv2.imshow('img', img)
     k = cv2.waitKey(1) & 0xFF
