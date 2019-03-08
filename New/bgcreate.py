@@ -3,7 +3,7 @@ import os
 #print(os.getcwd())
 
 directory = '/home/pi/Desktop/personal_opencv/New/negative_images'
-bg = open("bgc", "w")
+bg = open("bg", "w")
 many = 0
 
 for filename in os.listdir(directory):

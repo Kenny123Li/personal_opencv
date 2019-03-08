@@ -16,11 +16,16 @@ try 4
 pass compared to any other object in the camera]
 -----------------------------------------
 try [5] 
-[number of pos images:  number of neg images: ] 
+[number of pos images: 100 number of neg images: 222, 24 by 24] 
+[actually used different negative images for creation of positive vector file and classifier training
+but kept size of pictures and stuff the same, training is quite laggy]
+[how the classifier did]
+-----------------------------------------
+try [6] 
+[number of pos images: 100 number of neg images: ] 
 [description of training]
 [how the classifier did]
 -----------------------------------------
-
 
 
 try [number] 
