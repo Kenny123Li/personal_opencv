@@ -1,0 +1,5 @@
+-maxFalseAlarmRate <max_false_alarm_rate>, usually 0.5 (random guessing)
+
+
+Acceptance ratio's: should be 0.000412662 or less, but not too much less cuz then calssifier
+is overtrained and won't recognize anything

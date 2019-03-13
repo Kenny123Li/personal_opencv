@@ -18,13 +18,20 @@ pass compared to any other object in the camera]
 try [5] 
 [number of pos images: 100 number of neg images: 222, 24 by 24] 
 [actually used different negative images for creation of positive vector file and classifier training
-but kept size of pictures and stuff the same, training is quite laggy]
-[how the classifier did]
+but kept size of pictures and stuff the same, training is quite laggy
+
+CHANGES:
+-numstages was ~10
+-the accuracy should be around 0.0004, 4x10^-3]
+
+[misfired when the pass wasn't in frame, honestly not that good]
 -----------------------------------------
 try [6] 
-[number of pos images: 100 number of neg images: ] 
-[description of training]
-[how the classifier did]
+[number of pos images: 100 number of neg images: 222, 24 by 24, seemed like you can't use anything
+besides that size] 
+[kept everything the same besides increasing maxFalseAlarmRate to 0.9 instead of 0.5]
+[we need more negative and positive images to make the classifier be able to have
+multiple stages for a high maxFalseAlarmRate]
 -----------------------------------------
 
 

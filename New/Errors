@@ -1,0 +1,10 @@
+"Required leaf false alarm rate achieved. Branch training terminated."
+-this means that given the samples and settings of the training, the cascade has reached desired
+potential
+
+-by default, minHitRate is 0.995 (idk) and maxFalseAlarmRate is 0.5 (random guessing)
+
+-whereas each stage needs to reach a individual false acceptance rate (good 
+classification of negatives) that is a bit better than random guessing, symbolized by 0.5 value
+and it only allows 5 out of 1000 positive samples to get wrongly classified during training process
+
