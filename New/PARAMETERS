@@ -3,3 +3,5 @@
 
 Acceptance ratio's: should be 0.000412662 or less, but not too much less cuz then calssifier
 is overtrained and won't recognize anything
+
+width and height should be same aspect ratio as positive image, so 10 by 20 for us

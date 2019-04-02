@@ -15,7 +15,7 @@ try 4
 [actually 2nd best i'd say. Still had a lot of boxes, but it was noticeably more dense around a hall
 pass compared to any other object in the camera]
 -----------------------------------------
-try [5] 
+try [5]
 [number of pos images: 100 number of neg images: 222, 24 by 24] 
 [actually used different negative images for creation of positive vector file and classifier training
 but kept size of pictures and stuff the same, training is quite laggy
@@ -26,13 +26,92 @@ CHANGES:
 
 [misfired when the pass wasn't in frame, honestly not that good]
 -----------------------------------------
-try [6] 
+try [6]
 [number of pos images: 100 number of neg images: 222, 24 by 24, seemed like you can't use anything
 besides that size] 
-[kept everything the same besides increasing maxFalseAlarmRate to 0.9 instead of 0.5]
+[increased maxFalseAlarmRate to 0.7 instead of 0.5 and increased minHitRate 0.997 from default
+of 0.995, and numstages = 11]
 [we need more negative and positive images to make the classifier be able to have
 multiple stages for a high maxFalseAlarmRate]
 -----------------------------------------
+try [7]
+[number of pos images: 100 number of neg images: 200, 24 by 24, used grayscaled and resized versions
+for negative images used for training] 
+[didn't change maxfalse alarm rate or minhit rate, kept everything same to test if grayscaled
+resized (except 12 numstages). Training seems promising, had a bunch of N's for the last stage]
+[acceptance ratio is 0.000418979, at first, but was overtrained
+still didn't fire when acceptance ratio was well above, at 0.0007 so something wrong with it.
+Did hit once, when pass was in the camera, but just once]
+-----------------------------------------
+try [8] 
+[number of pos images:  for img1, got 100, w=50, h=30.
+			for img2, got 100, w=36, h=22.
+			for img3, got 100, w=32, h=21.
+			for img4, got 100, w=21, h=12.
+			for img5, got 100, w=26, h=17.
+500 total all very close aspect ratios to original picture
+number of neg images: 200, same as before] 
+[description of training]
+[how the classifier did]
+-----------------------------------------
+
+
+BEST CLASSIFIER SO FAR:
+[try_4]
+faces = face_cascade.detectMultiScale(gray, 5, 10)
+cv2.rectangle(img, (x,y), (x+w, y+h), (255, 255,0), 2)
+-rarely gives false positive, and usually hits, but not often
+-gives consistent misfires on my sweatshirt tho
+-only consistently fires correctly when the pass is like 4-5 feet away from the camera
+
+[try_3]
+faces = face_cascade.detectMultiScale(gray, 10, 20, 3) the third number is min-neighbors
+cv2.rectangle(img, (x,y), (x+w, y+h), (255, 255,0), 2)
+
+-rarely gives false positive, and usually hits, but not often
+-gives consistent misfires on my sweatshirt tho
+
+GOOD CLASSIFIERS:
+
+[try_1]
+faces = face_cascade.detectMultiScale(gray, 10, 20)
+cv2.rectangle(img, (x,y), (x+w, y+h), (255, 255,0), 2)
+
+-decent, but still gives small misfires
+
+[try_2]
+faces = face_cascade.detectMultiScale(gray, 2.5, 4)
+cv2.rectangle(img, (x,y), (x+w, y+h), (255, 255,0), 2)
+
+-rarely gives false positive, and usually hits, but not often
+
+[try_5]
+faces = face_cascade.detectMultiScale(gray, 2.5, 4)
+cv2.rectangle(img, (x,y), (x+w, y+h), (255, 255,0), 2)
+
+-there's pretty much no saving this one
+
+
+[try_6]
+faces = face_cascade.detectMultiScale(gray, 10, 20)
+cv2.rectangle(img, (x,y), (x+w, y+h), (255, 255,0), 2)
+
+-gives false positive on my sweatshirt kind of often, not too good but could 
+make it so that the door only opens after a consistent stream of rectangles go off for a certain 
+time length
+-honestly gives most consistent fires on the pass, so that part is good
+
+[try_7]
+faces = face_cascade.detectMultiScale(gray, 2.5, 4)
+cv2.rectangle(img, (x,y), (x+w, y+h), (255, 255,0), 2)
+
+-couldn't save this one, never fired,
+
+[try_8]*
+faces = face_cascade.detectMultiScale(gray, 2.5, 4)
+cv2.rectangle(img, (x,y), (x+w, y+h), (255, 255,0), 2)
+
+-rarely gives false positive, and usually hits, but not often
 
 
 try [number] 

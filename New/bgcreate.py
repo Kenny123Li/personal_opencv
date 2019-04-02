@@ -2,7 +2,7 @@ import os
 
 #print(os.getcwd())
 
-directory = '/home/pi/Desktop/personal_opencv/New/negative_images'
+directory = '/home/pi/Desktop/personal_opencv/New/g_neg'
 bg = open("bg", "w")
 many = 0
 
@@ -11,7 +11,7 @@ for filename in os.listdir(directory):
         continue
     else:
         many += 1
-        bg.write("negative_images/"+str(filename)+"\n")
+        bg.write("g_neg/"+str(filename)+"\n")
         continue
 print(many)
 bg.close()
