@@ -93,7 +93,7 @@ cv2.rectangle(img, (x,y), (x+w, y+h), (255, 255,0), 2)
 
 
 [try_6]
-faces = face_cascade.detectMultiScale(gray, 10, 20)
+faces = face_cascade.detectMultiScale(gray, 10, 20, 3)
 cv2.rectangle(img, (x,y), (x+w, y+h), (255, 255,0), 2)
 
 -gives false positive on my sweatshirt kind of often, not too good but could 
