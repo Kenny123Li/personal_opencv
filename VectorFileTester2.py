@@ -12,7 +12,7 @@ face_cascade = cv2.CascadeClassifier('cascade.xml')
 
 
 camera = PiCamera()
-camera.rotation = 180
+camera.rotation = 270
 camera.resolution = (640, 480)
 camera.framerate = 32
 rawCapture = PiRGBArray(camera, size=(640, 480))
@@ -24,7 +24,7 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port 
         break
     img = frame.array
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    faces = face_cascade.detectMultiScale(gray, 10, 20, 3)
+    faces = face_cascade.detectMultiScale(gray, 9, 42, 3)
     
     for (x, y, w, h) in faces:
         cv2.rectangle(img, (x,y), (x+w, y+h), (255, 255, 0), 2)
